@@ -11,6 +11,7 @@ nav_order: 11
 Next, we're going to create a consensus sequence from our reads mapped to the 'best' reference sequence (whichever reference had the highest number of reads mapped and/or highest average coverage depth). This step is necessary as it provides us with a single FASTA file containing one (consensus) sequence representing all of the reads that mapped to our reference (in the BAM file). A consensus sequence is essentially a concatenation of all reads into one, as shown in the diagram below:
 
 ![Consensus sequence diagram](../images/consensus_sequence_diagram.png)
+
 *Diagram of creating a consensus sequence from reads mapped to a reference sequence.*
 
 We can convert BAM to FASTA format and create a consensus in one step using `samtools`. The command below will create the consensus sequence from your mapped reads, and then change the sequence header of your consensus sequence to `COI_consensus` (as it is default called the name of the reference file, which can get confusing). Your FASTA formatted consensus sequence will be saved to the same directory as the BAM format file.

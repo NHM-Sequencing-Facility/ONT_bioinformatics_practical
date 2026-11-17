@@ -29,12 +29,12 @@ As with previous steps (and making sure you are in your practical directory), le
 mkdir mapping
 ```
 
-Now enter the new `mapping` directory (using `cd mapping`). You will now need to copy the COI reference sequences for your specific sample from the `/hpc/groups/icl-msc-tbe/2026/coi_refs/` directory into your newly created `mapping` directory.
+Now enter the new `mapping` directory (using `cd mapping`). You will now need to copy the COI reference sequences for your specific sample from the `/hpc/groups/icl-msc-tbe/2026-dec/coi_refs/` directory into your newly created `mapping` directory.
 As you are working with specimens from an ongoing research project, and due to morphological uncertainty (they could only be identified to family-level), you will have several COI FASTA reference sequences from a couple of different species within the specimens family to increase taxonomic diversity, and thus offset the uncertainty with the morphological identification (in theory).
 You can copy your required references with the command below, where you will need to change `[SPECIMEN_NAME]` to your specimen's taxonomic identification (e.g. Scarabaeidae):
 
 ```bash
-cp /hpc/groups/icl-msc-tbe/2026/coi_refs/[SPECIMEN_NAME]_*.fasta .
+cp /hpc/groups/icl-msc-tbe/2026-dec/coi_refs/[SPECIMEN_NAME]_*.fasta .
 ```
 
 Double check the reference has been correctly copied by typing `ls`, and looking for `[SPECIMEN_NAME]_*.fasta`. Remember that the asterisk (`*`) represents a wildcard character (e.g., '1', '2', '3').
@@ -93,20 +93,27 @@ The `flagstat` output should look something like this:
 
 Where each line specifies:
 
-1. Total number of reads in BAM file (passed mapping quality thresholds + those that failed)
-2. Duplicates
-3. Number of mapped reads
-4. \*Paired reads in sequencing
-5. \*Number of forward reads
-6. \*Number of reverse reads
-7. \*Number of properly paired reads
-8. \*Number of reads mapped along with their mates
-9. \*Singletons: number of reads mapped alone, i.e. mate not mapped
-10. \*Reads whose mates are mapped to a different chromosome
-11. \*Reads whose mates are mapped to a different chromosome with mapping quality greater than 5
+Where each line specifies:
+
+1. Total number of reads in BAM file (QC-passed + QC-failed)
+2. Primary reads
+3. Secondary alignments
+4. Supplementary alignments
+5. Duplicates
+6. Primary duplicates
+7. Mapped reads (and percentage)
+8. Primary mapped reads (and percentage)
+9. \*Paired reads in sequencing
+10. \*Read1
+11. \*Read2
+12. \*Properly paired reads
+13. \*Reads mapped with their mate
+14. \*Singletons (reads mapped without their mate)
+15. \*Reads with mate mapped to a different chromosome
+16. \*Reads with mate mapped to a different chromosome (mapQ = 5)
 
 {: .note }
-N.B. Bear in mind we are working with single-direction ONT amplicon reads and not paired-end Illumina reads therefore the lines starting with `*` are not applicable for ONT data and can be ignored.
+> The most useful lines for ONT amplicon data are line 1 (total reads) and line 7 (mapped reads and percentage). Bear in mind we are working with single-direction ONT amplicon reads and not paired-end Illumina reads therefore the lines starting with `*` (lines 9-16) are not applicable for ONT data and can be ignored.
 
 Next, we will get an insight into the two 'types' of sequence coverage against the COI reference sequence we mapped our reads to  these are 'coverage', or the percentage of the reference sequence covered/mapped by our reads, and 'coverage depth' or the number of times the whole reference sequence is represented by a set of reads.
 
@@ -143,7 +150,11 @@ When viewed, the file will look something like:
 
 ![Samtools depth per base](../images/samtools_depth_per_base.png)
 
+{: .note }
+> Each row represents one base position in the reference sequence, showing the reference name, the position number, and how many reads were mapped to that position.
+
 We can also use complicated bash syntax, such as in the lines of code below, to determine the average, minimum and maximum coverage depth of our mapped reads against the reference, and output them to a file called `avg_depth.txt`.
+
 `echo` is a bash command that prints the text "Average depth:" to an output file named `avg_depth.txt`, whilst also creating that file. The next line then runs the `samtools depth` on our data and 'pipes' (using `|`) the output to the `awk` command, which adds up the values in the third column of our 'depth' output (using `sum+=$3`), and then prints the average, minimum and maximum of those values to the `avg_depth.txt` file we just created, using `>` to append it to the file.
 
 ```bash
@@ -160,11 +171,11 @@ When viewed (with `head -20`, `nano` or `more` commands), the file will look som
 
 There's no shortage of ways to analyse our sequence data, both using samtools and the plethora of other tools out there!
 
-{: .note }
-**[Q]**  
-Looking at the outputs of each command (using the `nano` command followed by the filename), answer the following questions:
-1. How long was the COI reference sequence?
-2. How many reads mapped to the reference? Is this the same number as you got in the (flagstat) mapping statistics?
-3. How many bases in the reference were covered by your reads (i.e. what was the 'coverage'?), and what percentage does this amount to?
-4. What was the average depth of coverage across the reference?
-5. What was the minimum and maximum depths? Is the coverage depth highly variable or uniform across the reference sequence?
+{: .highlight }
+> **[Q]**  
+> Looking at the outputs of each command (using the `nano` command followed by the filename), answer the following questions:
+> 1. How long was the COI reference sequence?
+> 2. How many reads mapped to the reference? Is this the same number as you got in the (flagstat) mapping statistics?
+> 3. How many bases in the reference were covered by your reads (i.e. what was the 'coverage'?), and what percentage does this amount to?
+> 4. What was the average depth of coverage across the reference?
+> 5. What was the minimum and maximum depths? Is the coverage depth highly variable or uniform across the reference sequence?

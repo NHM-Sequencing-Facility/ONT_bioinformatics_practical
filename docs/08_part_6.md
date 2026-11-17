@@ -45,7 +45,7 @@ First, we need to download the entire NCBI taxonomy as a requirement of Recentri
 mkdir rcf
 ```
 
-Now let's run the Recentrifuge tool.
+Now let's run the Recentrifuge tool, but first move into the rcf directory with `cd rcf`.
 
 - `-n` tells the tool where the taxdump is stored. The taxdump is a collection of files representing a snapshot of NCBI's entire taxonomy database. I have pre-downloaded this for you, in this case the taxdump is from January 2025. Recentrifuge needs two files in the taxdump, `nodes.dmp` and `names.dmp`, which collectively form a sort of taxonomic tree we will match against (see below top of names.dmp)
 
@@ -64,23 +64,23 @@ Once it's finished running let's view the results. Type `ls` and you will see a 
 Now, let's run the `head` command (20 lines should be enough) to view our `rcf_results.stats.csv` summary file:
 
 ```bash
-head -20 rcf_result.stats.csv
+head -20 rcf_result.stat.csv
 ```
 
 If you are able, transfer the HTML file to your local computer folder in WinSCP and open it to view the visualisation in a web browser. The HTML file should look something like this:
 
 ![Recentrifuge pie chart](../images/recentrifuge_pie.png)
 
-{: .note }
-**[Q]**  
-How do you think the contamination screening went overall?
-1. How many sequences were analysed by Recentrifuge in total?
-2. What percentage of your reads were classified as contaminant, and how many reads are remaining (i.e. unclassified)?
-3. How many unique TIDs (taxonomic IDs (i.e. taxa)) were the classified (i.e. contaminant) reads matched to?
-4. What organism made up the largest proportion of detected contaminant sequences (requires HTML)? How many sequences were assigned to this organism?
-5. What other organisms were your sequences also classified to?
-6. Where do you think these contaminants came from, and how do you think they may have got into your sequenced sample?
-7. Do you think taking the `unclassified_reads` (output by Kraken2) forward for further analysis is a fool proof way of screening ALL possible contaminants?
+{: .highlight }
+> **[Q]**  
+> How do you think the contamination screening went overall?
+> 1. How many sequences were analysed by Recentrifuge in total?
+> 2. What percentage of your reads were classified as contaminant, and how many reads are remaining (i.e. unclassified)?
+> 3. How many unique TIDs (taxonomic IDs (i.e. taxa)) were the classified (i.e. contaminant) reads matched to?
+> 4. What organism made up the largest proportion of detected contaminant sequences (requires HTML)? How many sequences were assigned to this organism?
+> 5. What other organisms were your sequences also classified to?
+> 6. Where do you think these contaminants came from, and how do you think they may have got into your sequenced sample?
+> 7. Do you think taking the `unclassified_reads` (output by Kraken2) forward for further analysis is a fool proof way of screening ALL possible contaminants?
 
 Once you are done, you can return to your practical directory (`cd ~/ONT_practical`).
 
@@ -104,8 +104,8 @@ kraken2 --db /hpc/groups/icl-msc-tbe/databases/k2_pluspf_16gb_20240904 --output 
 
 If you're feeling particularly motivated, you can also rerun the Recentrifuge commands above on these new Kraken2 (plusPF) outputs and answer the questions below. Remember to change your paths in the Recentrifuge command to the new `kraken2_screen-pluspf/` kraken2 output file.
 
-{: .note }
-**[Q]**  
-How did this Kraken2 run differ from the last?
-1. Were greater or fewer reads classified than when running Kraken2 with the standard 8GB database?
-2. Were any organisms detected in the 'plusPF 16GB run' that weren't detected in the 'standard 8GB run'?
+{: .highlight }
+> **[Q]**  
+> How did this Kraken2 run differ from the last?
+> 1. Were greater or fewer reads classified than when running Kraken2 with the standard 8GB database?
+> 2. Were any organisms detected in the 'plusPF 16GB run' that weren't detected in the 'standard 8GB run'?

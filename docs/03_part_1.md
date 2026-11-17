@@ -36,10 +36,10 @@ These per-base Phred scores are then translated to quality scores for each seque
 For ONT specifically, basecalling accuracy has historically been lower than Illumina, with typical Q scores in the Q7-Q20 range for earlier chemistries. However, newer chemistries and base callers (like Guppy with super-accuracy models, or Dorado) can achieve higher Q scores.
 
 You'll have multiple FASTQ files each as MinKNOW outputs a subset of reads to each FASTQ file. You would have set the number of reads you wanted to put to each file during your MinKNOW sequencing run set up.  
-These FASTQ files will be located in `/hpc/groups/icl-msc-tbe/2026/`. You can see a list of what's in this directory by typing:
+These FASTQ files will be located in `/hpc/groups/icl-msc-tbe/2026-dec/`. You can see a list of what's in this directory by typing:
 
 ```bash
-ls /hpc/groups/icl-msc-tbe/2026/
+ls /hpc/groups/icl-msc-tbe/2026-dec/
 ```
 
 You'll see there are several files, scripts, and directories within it.

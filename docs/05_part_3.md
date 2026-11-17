@@ -10,7 +10,7 @@ nav_order: 6
 
 The summary statistics generated can only tell us so much, and merely provide a first-pass look at our sequence data. For a more in-depth look at sequence quality, we'll use some widely used tools to visualise our sequence quality and produce some plots.
 
-First, we will return to our home directories again with `cd ~/ONT_practical`, and then we will run [NanoPlot](https://github.com/wdecoster/NanoPlot) on our raw sequence data, using the command below. NanoPlot should only take a few minutes. If you get warnings, do not worry.
+First, we will return to our home directories again with `cd ~/ONT_practical`, and then we will run [NanoPlot](https://github.com/wdecoster/NanoPlot) on our raw sequence data using the command below. NanoPlot should only take a few minutes. If you get warnings, do not worry.
 
 ```bash
 NanoPlot --fastq raw_reads/raw_reads.fastq.gz --outdir qc_reports/nanoplot --prefix initial_qc- --N50 --title "Initial NanoPlot QC report for raw sequence data"
@@ -21,7 +21,7 @@ With this command, we are first telling NanoPlot that we are inputting a FASTQ f
 You can view just the summary statistics in the `initial_qc-NanoStats.txt` file, which can be viewed using the command below (remember to type `cd qc_reports/nanoplot` to enter the directory first):
 
 ```bash
-head -30 initial_qc-NanoStats.txt
+head -30 ~/ONT_practical/qc_reports/nanoplot/initial_qc-NanoStats.txt
 ```
 
 This should look something like the screenshot below:
@@ -34,12 +34,12 @@ You can also view the entire NanoPlot HTML report containing the statistics and 
 
 You will notice at the top of the `initial_qc-NanoPlot-report.html` file, the statistics are the same as those printed directly to the terminal by looking at the top 30 lines of `initial_qc-NanoStats.txt`.
 
-{: .note }
-**[Q]**  
-Looking at the NanoPlot report statistics and plots:
-1. What is the mean read length and quality of your data?
-2. How many bases were sequenced in total?
-3. What was your read length N50?
-4. How many reads (and what percentage) of your data surpassed Q10?
-5. Looking at the 'Read lengths vs Average read quality' plots, what can you tell about your sequence data?
+{: .highlight }
+> **[Q]**  
+> Looking at the NanoPlot report statistics and plots:
+> 1. What is the mean read length and quality of your data?
+> 2. How many bases were sequenced in total?
+> 3. What was your read length N50?
+> 4. How many reads (and what percentage) of your data surpassed Q10?
+> 5. Looking at the 'Read lengths vs Average read quality' plots, what can you tell about your sequence data?
 

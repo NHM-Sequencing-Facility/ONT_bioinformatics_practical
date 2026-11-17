@@ -3,8 +3,7 @@ title: Overview of Practical
 layout: default
 nav_order: 1
 ---
-![NHM logo](images/nhm_logo.png)
-
+<img src="../images/nhm_logo.png" alt="NHM logo" width="200">
 ---
 
 # Overview of Practical
@@ -26,5 +25,6 @@ The practical is formed of 9 main parts:
 5. Visualising quality-controlled sequence data
 6. Screening contaminant sequences in your data
 7. Reference mapping, and assessing mapping quality and coverage
-8. Generating a consensus sequence from our mapped reads
+8. Generating a consensus sequence from our mapped reads<br>
+8.1. Generating a consensus sequence through a clustering approach
 9. Species validation and taxonomic identification

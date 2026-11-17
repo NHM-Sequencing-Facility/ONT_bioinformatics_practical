@@ -26,12 +26,12 @@ Then run Porechop on our 'raw' sequence data and output the adapter-trimmed sequ
 porechop -i raw_reads/raw_reads.fastq.gz -o trimmed_amplicon/trimmed_reads.fastq --verbosity 1
 ```
 
-{: .note }
-**[Q]**  
-Given the logging that was output to the terminal,
-1. How many reads were processed?
-2. How many reads had adapters trimmed from the start, and how many from the end?
-3. How many reads were split in half as they were determined to be chimeras?
+{: .highlight }
+> **[Q]**  
+> Given the logging that was output to the terminal,
+> 1. How many reads were processed?
+> 2. How many reads had adapters trimmed from the start, and how many from the end?
+> 3. How many reads were split in half as they were determined to be chimeras?
 
 Now we have trimmed all of our sequences to remove any remaining adapters and split any chimeric sequences, we'll use another QC tool called [Chopper](https://github.com/wdecoster/chopper) to trim and filter our adapter-trimmed sequences based on quality and length, as short and low quality reads can make things difficult later on.
 
@@ -41,8 +41,8 @@ Here we'll set `-q`, the minimum Phred (Q) quality score of each read to 9, so a
 chopper -q 9 --minlength 200 --threads 4 --input trimmed_amplicon/trimmed_reads.fastq > trimmed_amplicon/clean_reads.fastq
 ```
 
-{: .note }
-**[Q]**  
-Given the logging that was output to the terminal,
-1. How many reads were kept based on their quality thresholds?
-2. How many reads were removed?
+{: .highlight }
+> **[Q]**  
+> Given the logging that was output to the terminal,
+> 1. How many reads were kept based on their quality thresholds?
+> 2. How many reads were removed?

@@ -19,9 +19,9 @@ nav_order: 3
 ---
 
 {: .note }
-We recommend typing out all the code as this will help you become familiar with the command line-based bioinformatics.
-A small code 'cheat sheet' of useful bash commands can be found in the sidebar.
-If you need any assistance at all, please don't hesitate to ask!
+> We recommend typing out all the code as this will help you become familiar with the command line-based bioinformatics.
+> A small code 'cheat sheet' of useful bash commands can be found [here](3_useful_bash_commands.html).
+> If you need any assistance at all, please don't hesitate to ask!
 
 ---
 
@@ -124,16 +124,10 @@ conda activate
 
 `(base)` should be appended to the start of your prompt (if it wasn't there already), signifying you have activated the 'base' conda environment.
 
-In this 'base' conda environment, we're going to install mamba (a reimplementation of conda written in C++ that is much faster than conda), using conda:
-
-```bash
-conda install conda-forge::mamba
-```
-
 Create the conda environment required for this practical from the preconstructed conda_env.yaml file (this file contains an archive of all the tools and packages you will need for the class. It may take ~5 minutes to set up):
 
 ```bash
-mamba env create -f /hpc/groups/icl-msc-tbe/2026/conda_env.yaml
+conda env create -f /hpc/groups/icl-msc-tbe/2026-dec/conda_env.yaml
 ```
 
 Check that the conda environment was successfully created from the yaml file by running:

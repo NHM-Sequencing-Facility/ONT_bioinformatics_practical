@@ -25,4 +25,4 @@ This poses a significant logistical challenge for researchers who want to take a
 
 Up until this point you have prepared, sequenced, and basecalled the DNA fragments in your prepared libraries in real-time using the software MinKNOW.
 
-This practical will take you through the next steps - quality control and visualisation, reference-based mapping and consensus generation, and preliminary sequence analysis.
+This practical will take you through the next steps - quality control and visualisation, reference-based mapping and an alternative clustering approach and consensus generation, and finally some preliminary sequence analysis.
