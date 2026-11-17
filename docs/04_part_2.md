@@ -27,7 +27,7 @@ seqkit stats ~/ONT_practical/raw_reads/raw_reads.fastq.gz --out-file ~/ONT_pract
 To then view this Seqkit output file, type `cd seqkit_output` to enter the results directory and run the `head` command, which (by default) will look at the top 10 lines of your output files:
 
 ```bash
-head seqkit_output/raw_reads_summary_stats.txt
+head ~/ONT_practical/seqkit_output/raw_reads_summary_stats.txt
 ```
 
 This should output the contents of the file directly to the terminal, and look something like this:
@@ -43,11 +43,11 @@ Most of the column headers are self-explanatory, but:
 
 Theoretically, the `avg_len` should be close to your expected amplicon size (i.e. the size of your COI PCR products), and the `min_len` and `max_len` range shouldn't be too wide since you're targeting a specific region.
 
-{: .note }
-**[Q]**  
-1. How many sequences are in your `raw_reads.fastq.gz` file?  
-2. What's the average length of those reads?  
-3. Would you say the `min_len` and `max_len` are relatively close together?
+{: .highlight }
+> **[Q]**  
+> 1. How many sequences are in your `raw_reads.fastq.gz` file?  
+> 2. What's the average length of those reads?  
+> 3. How does your average length compare to the expected COI amplicon size?
 
 
 

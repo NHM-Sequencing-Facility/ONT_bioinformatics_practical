@@ -2,7 +2,22 @@ title: ONT Bioinformatics Practical
 description: A bioinformatics practical for processing ONT data
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://nhm-sequencing-facility.github.io/ONT_bioinformatics_practical
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  Template Repository: https://github.com/NHM-Sequencing-Facility/ONT_bioinformatics_practical
+
+callouts_level: quiet
+callouts:
+  note:
+    title: Note
+    color: blue
+  warning:
+    title: Warning
+    color: yellow
+  important:
+    title: Important
+    color: red
+  highlight:
+    title: ""
+    color: green
