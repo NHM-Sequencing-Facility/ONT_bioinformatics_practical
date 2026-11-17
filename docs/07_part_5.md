@@ -16,7 +16,7 @@ NanoPlot --fastq trimmed_amplicon/clean_reads.fastq --outdir qc_reports/nanoplot
 
 As well as visualising our post-QC sequence metrics, let's compare them with the metrics we generated for our raw reads to see what changed. To start with, we will compare the `NanoStats` summary statistics file, we will do this using a simple custom python script I wrote that parses the quality metrics from both the pre- and post-QC `NanoStats` files into a human-readable format for easy(-ish) comparison.
 
-First, copy the script from `icl-msc-practical-2025` to your practical directory. As you are currently in your practical directory, we can just specify the path to the `nanoplot_summariser.py` script, and use `.` to denote the current directory as the destination:
+First, copy the script from `icl-msc-tbe` to your practical directory. As you are currently in your practical directory, we can just specify the path to the `nanoplot_summariser.py` script, and use `.` to denote the current directory as the destination:
 
 ```bash
 cp /hpc/groups/icl-msc-tbe/nanoplot_summariser.py .
