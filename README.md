@@ -18,8 +18,7 @@ It covers the processing and analysis of COI amplicon sequencing data generated 
 6. Screening for contaminant sequences using Kraken2
 7. Reference-based mapping
 8. Generating a consensus sequence
-   
-8.1. Generating a consensus sequence through a clustering approach
+    - 8.1. Generating a consensus sequence through a clustering approach
 9. Species validation through BLASTn
 
 ## Built with
