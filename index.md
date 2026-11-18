@@ -3,7 +3,7 @@ title: Overview of Practical
 layout: default
 nav_order: 1
 ---
-<img src="../images/nhm_logo.png" alt="NHM logo" width="200">
+<img src="images/nhm_logo.png" alt="NHM logo" width="200">
 ---
 
 # Overview of Practical

@@ -22,7 +22,7 @@ First, make sure you are back in the practical directory (using `cd ~/ONT_practi
 mkdir kraken2_screen
 ```
 
-Now enter the `kraken2_screen` directory and run Kraken2 (using the command below) to screen and classify your reads against the reference sequences in the database.
+Now enter the `kraken2_screen` directory (`cd kraken2_screen`) and run Kraken2 (using the command below) to screen and classify your reads against the reference sequences in the database.
 
 `k2_standard_08gb_20240904` is the kraken2 database we'll be screening our sequence data against. It is stored in the `icl-msc-tbe/databases/` directory. Here, we're telling kraken2 to run on our 'cleaned' (adapter and quality trimmed reads) with `../trimmed_amplicon/clean_reads.fastq`.
 
@@ -90,7 +90,7 @@ Once you are done, you can return to your practical directory (`cd ~/ONT_practic
 
 Taxonomically assign your reads against a different database using Kraken2 to compare the number of classified sequences. This time we will run Kraken2 using the 16GB plusPF database. The 'plusPF' is built on the standard database, in this case the 16GB version, and includes additional sequences representing protozoal and fungal sequences. Fungal sequences are nearly always present in museum specimens, so it's always a good idea to screen for fungi when working with samples from the collections!
 
-First create a new directory for these results, with:
+First go back one directory `cd ..` (to the practical directory) and then create a new directory for these results, with:
 
 ```bash
 mkdir kraken2_screen-pluspf
