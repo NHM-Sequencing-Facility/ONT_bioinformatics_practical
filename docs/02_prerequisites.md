@@ -20,7 +20,7 @@ nav_order: 3
 
 {: .note }
 > We recommend typing out all the code as this will help you become familiar with the command line-based bioinformatics.
-> A small code 'cheat sheet' of useful bash commands can be found [here](3_useful_bash_commands.html).
+> A small code 'cheat sheet' of useful bash commands can be found [here](13_useful_bash_commands.md).
 > If you need any assistance at all, please don't hesitate to ask!
 
 ---

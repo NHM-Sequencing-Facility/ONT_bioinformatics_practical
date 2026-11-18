@@ -27,7 +27,7 @@ Then enter that directory (using `cd blast_mito_db`), and run this perl script (
 update_blastdb.pl --decompress mito
 ```
 
-Once it's finished downloading and decompressing the files (it may take a couple of minutes), we can run our local BLAST nucleotide (BLASTn) similarity search against this mitochondrial sequence database in order to classify your reads that mapped to the COI reference sequence (and went on to form your consensus sequence). As always, let's create a directory for those results to go into.
+Once it's finished downloading and decompressing the files (it may take a couple of minutes), we can run our local BLAST nucleotide (BLASTn) similarity search against this mitochondrial sequence database in order to classify your reads that mapped to the COI reference sequence (and went on to form your consensus sequence). As always, go back to the practical directory `cd ..` create a directory for those results to go into.
 
 ```bash
 mkdir blast_mito_results
