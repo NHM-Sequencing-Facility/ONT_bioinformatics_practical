@@ -5,16 +5,32 @@ nav_order: 8
 ---
 
 # PART 5: Visualising our quality-controlled sequence data
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 ---
 
-Now we have trimmed and filtered our data to remove poor quality sequences and remaining adapters, let's visualise our quality metrics again using [Nanoplot](https://github.com/wdecoster/NanoPlot). We are roughly using the same command as before, but this time running it on our QC'd data in `trimmed_amplicon/`. This will take a minute to run.
+## Running Nanoplot on trimmed reads
+
+Now we have trimmed and filtered our data to remove poor quality sequences and remaining adapters, let's visualise our quality metrics again using [Nanoplot](https://github.com/wdecoster/NanoPlot). 
+
+We are roughly using the same command as before, but this time running it on our QC'd data in `trimmed_amplicon/`. This will take a minute to run.
 
 ```bash
 NanoPlot --fastq trimmed_amplicon/clean_reads.fastq --outdir qc_reports/nanoplot --prefix post_filtering_qc- --N50 --title "Post_QC NanoPlot report for cleaned sequence data"
 ```
 
-As well as visualising our post-QC sequence metrics, let's compare them with the metrics we generated for our raw reads to see what changed. To start with, we will compare the `NanoStats` summary statistics file, we will do this using a simple custom python script I wrote that parses the quality metrics from both the pre- and post-QC `NanoStats` files into a human-readable format for easy(-ish) comparison.
+## Comparing QC of pre and post filtered reads
+
+Let's compare our post-QC metrics with what we generated for our raw reads to see what has changed. To start with, we will compare the `NanoStats` summary statistics file, we will do this using a simple custom python script I wrote that parses the quality metrics from both the pre- and post-QC `NanoStats` files into a human-readable format for comparison.
 
 First, copy the script from `icl-msc-tbe` to your practical directory. As you are currently in your practical directory, we can just specify the path to the `nanoplot_summariser.py` script, and use `.` to denote the current directory as the destination:
 
