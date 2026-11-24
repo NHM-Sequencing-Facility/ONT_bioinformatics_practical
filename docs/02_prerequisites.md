@@ -27,12 +27,13 @@ nav_order: 3
 
 ## Connecting to Franklin HPC
 
-First, let's 'tunnel in' and connect to the Franklin High-Performance Computing (HPC) cluster. This will enable a connection between the computer you are on and the Franklin HPC:
+First, let's 'tunnel in' and connect to the Franklin High-Performance Computing (HPC) cluster. This will enable a connection between the computer you are working from, and the Franklin HPC:
 
 ![Bastion to Server diagram](../images/bastion_to_server.png)
 
 ### If you've not connected to Franklin before:
-{: .no_toc }
+
+#### Setting up and accessing franklin through MobaXterm
 
 1. Download MobaXterm (portable version)
 2. Create a new SSH session (click **Session**, then **SSH**):
@@ -47,8 +48,15 @@ First, let's 'tunnel in' and connect to the Franklin High-Performance Computing 
 7. Scan the QR code with the Google Authenticator app to set up your MFA, press the coloured '+' in the bottom right of the app and scan the QR code
 8. Close the connection by clicking the 'X' on the terminal window tab
 
-### If you've accessed Franklin previously, or have completed the steps above:
-{: .no_toc }
+Once you have completed the setup, follow [these](#mobaxterm-is-already-set-up) steps below to connect.
+
+### If you've accessed Franklin previously:
+
+---
+
+#### Via MobaXterm
+
+If you already have MobaXterm set up, connect by:
 
 ```bash
 ssh -X [YOUR_USERNAME]@franklin.nhm.ac.uk
@@ -59,6 +67,28 @@ If prompted, enter the verification code (shown on your Google Authenticator app
 Once you've logged in, you should see something like this (please let us know if you're having any trouble):
 
 ![Franklin Terminal](../images/franklin_terminal.png)
+
+---
+
+#### Via Windows PowerShell or terminal
+
+```bash
+ssh [YOUR_USERNAME]@orca.nhm.ac.uk
+```
+
+When prompted, enter your password and verification code (shown on your Google Authenticator app).
+
+Once you are in Orca, log into franklin:
+
+```bash
+ssh franklin
+```
+
+Then you will be prompted to type your password.
+
+Once you've logged in, you should see something like this (please let us know if you're having any trouble):
+
+![Franklin Terminal](../images/franklin_login_terminal.png)
 
 ---
 
