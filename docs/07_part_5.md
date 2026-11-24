@@ -44,7 +44,7 @@ Now let's run the script, specifying 3 arguments; the pre-QC file, the post-QC f
 python nanoplot_summariser.py --in1 qc_reports/nanoplot/initial_qc-NanoStats.txt --in2 qc_reports/nanoplot/post_filtering_qc-NanoStats.txt --out qc_reports/nanoplot/nanoplot_comparison.txt
 ```
 
-Next, move into the `qc_reports/nanoplot` directory from your practical directory (using `cd qc_reports/nanoplot`), and view the created `nanoplot_comparison.txt` file using the file viewer `nano` followed by `nanoplot_comparison.txt`. This file should look something like this:
+Next, move into the `qc_reports/nanoplot` directory from your practical directory (using `cd qc_reports/nanoplot`), and view the created `nanoplot_comparison.txt` file using the file viewer `nano` as `nano nanoplot_comparison.txt`. This file should look something like this:
 
 ![Nanoplot comparison](../images/nanoplot_comparison_terminal.png)
 
